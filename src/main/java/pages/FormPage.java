@@ -5,36 +5,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.List;
 import java.util.Random;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
 public class FormPage {
 
+    private static Logger log = LoggerFactory.getLogger("FormPage.class");
 
-    @FindBy(id="inputFirstName3")
+
+    @FindBy(id = "inputFirstName3")
     private WebElement firstName;
-    @FindBy(id="inputLastName3")
+    @FindBy(id = "inputLastName3")
     private WebElement lastName;
-    @FindBy(id="inputEmail3")
+    @FindBy(id = "inputEmail3")
     private WebElement email;
-    @FindBy(name="gridRadiosSex")
+    @FindBy(name = "gridRadiosSex")
     private List<WebElement> gender;
-    @FindBy(id="inputAge3")
+    @FindBy(id = "inputAge3")
     private WebElement fillAge;
-    @FindBy(name="gridRadiosExperience")
+    @FindBy(name = "gridRadiosExperience")
     private List<WebElement> yearsOfExperience;
-    @FindBy(name="gridCheckboxProfession")
+    @FindBy(name = "gridCheckboxProfession")
     private List<WebElement> profession;
-    @FindBy(css ="#selectContinents")
+    @FindBy(css = "#selectContinents")
     WebElement continents;
-    @FindBy(css ="#selectSeleniumCommands > option:nth-child(3)")
+    @FindBy(css = "#selectSeleniumCommands > option:nth-child(3)")
     WebElement switchCommand;
-    @FindBy(css ="#selectSeleniumCommands > option:nth-child(5)")
+    @FindBy(css = "#selectSeleniumCommands > option:nth-child(5)")
     WebElement webElementCommand;
     @FindBy(css = "input[type='file']")
     WebElement fileInput;
@@ -47,19 +48,21 @@ public class FormPage {
     private static final int NUMBER_OF_CONTINENTS = 7;
     public static int randomContinent = new Random().nextInt(NUMBER_OF_CONTINENTS);
 
-    public FormPage (WebDriver driver){
+    public FormPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public FormPage setFirstName(String name){
+    public FormPage setFirstName(String name) {
         this.firstName.sendKeys(name);
         return this;
     }
-    public FormPage setLastName(String lastName){
+
+    public FormPage setLastName(String lastName) {
         this.lastName.sendKeys(lastName);
         return this;
     }
-    public FormPage setEmail(String email){
+
+    public FormPage setEmail(String email) {
         this.email.sendKeys(email);
         return this;
     }
@@ -84,43 +87,50 @@ public class FormPage {
         getRandomProfession(profession).click();
         return this;
     }
+
     public FormPage selectContinents() {
         Select cont = new Select(continents);
-        if (randomContinent>0){
+        if (randomContinent > 0) {
             cont.selectByIndex(randomContinent);
         }
         return this;
     }
+
     public FormPage selectCommands() {
         this.switchCommand.click();
         this.webElementCommand.click();
         return this;
     }
+
     public FormPage setFile() {
         File file = new File("src/main/resources/file.txt");
         this.fileInput.sendKeys(file.getAbsolutePath());
         return this;
     }
-    public FormPage setSingInButton(){
+
+    public FormPage setSingInButton() {
         this.singInButton.click();
         return this;
     }
 
-    private WebElement getRandomGender(List<WebElement> elements){
+    private WebElement getRandomGender(List<WebElement> elements) {
         int size = elements.size();
         int randomIndexFromList = random.nextInt(size);
         return elements.get(randomIndexFromList);
     }
-    private WebElement getRandomExperience(List<WebElement> elements){
+
+    private WebElement getRandomExperience(List<WebElement> elements) {
         int size = elements.size();
         int randomIndexFromList = random.nextInt(size);
         return elements.get(randomIndexFromList);
     }
-    private WebElement getRandomProfession(List<WebElement> elements){
+
+    private WebElement getRandomProfession(List<WebElement> elements) {
         int size = elements.size();
         int randomIndexFromList = random.nextInt(size);
         return elements.get(randomIndexFromList);
     }
+
     public String getValidationMsg() {
         return validationMsg.getText();
     }
