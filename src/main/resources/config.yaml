@@ -1,0 +1,21 @@
+browsers:
+  chrome: CHROME
+# firefox: FIREFOX
+
+enviroment:
+  int:
+    envName : int
+    appUrl: https://seleniumui.moderntester.pl/form.php
+    firstName: Brad
+    lastName: Pitt
+    email: bradpitt@gmail.com
+    age: 50
+    message: Form send with success
+  test:
+    envName: test
+    appUrl: https://seleniumui.moderntester.pl/form.php
+    firstName: Salma
+    lastName: Hayek
+    email: salmahayek@kahoot.com
+    age: 45
+    message: Form send with success

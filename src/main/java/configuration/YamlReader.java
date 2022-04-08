@@ -1,0 +1,26 @@
+package configuration;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
+
+import java.io.File;
+import java.io.IOException;
+
+public class YamlReader {
+    public static Config config;
+
+    public Config getConfig() {
+        return config;
+    }
+
+    public YamlReader() {
+        try {
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            this.config = mapper.readValue(new File("src/main/resources/config.yaml"), Config.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
