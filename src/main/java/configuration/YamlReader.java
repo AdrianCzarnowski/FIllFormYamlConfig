@@ -7,7 +7,8 @@ import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import java.io.File;
 import java.io.IOException;
 
-public class YamlReader {
+
+public class YamlReader  {
     public static Config config;
 
     public Config getConfig() {

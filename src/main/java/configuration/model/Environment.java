@@ -16,7 +16,7 @@ public class Environment {
         return test;
     }
 
-    public List<EnvironmentModel> getListOfEnvironments(){
+    public static List<EnvironmentModel> getListOfEnvironments(){
         List<EnvironmentModel> listOfEnvironments = new ArrayList<>();
         listOfEnvironments.add(getAbc());
         listOfEnvironments.add(getTest());
