@@ -1,10 +1,8 @@
 package configuration;
 
-import configuration.model.Environment;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
 
 public class AppProperties {
 
@@ -15,13 +13,9 @@ public class AppProperties {
     }
 
     private void setSystemPropertiesFromYamlEnvironment() {
+        YamlReader yamlReader = new YamlReader();
+            }
+
+        }
 
 
-
-
-
-
-
-
-    }
-}

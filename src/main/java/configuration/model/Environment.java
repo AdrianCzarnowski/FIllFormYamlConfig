@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Environment {
 
-    private EnvironmentModel abc;
-    private EnvironmentModel test;
+    private static EnvironmentModel abc;
+    private static EnvironmentModel test;
 
-    public EnvironmentModel getAbc() {
+    public static EnvironmentModel getAbc() {
         return abc;
     }
 
-    public EnvironmentModel getTest() {
+    public static EnvironmentModel getTest() {
         return test;
     }
 

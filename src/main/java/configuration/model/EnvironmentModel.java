@@ -20,7 +20,7 @@ public class EnvironmentModel {
     }
 
     @JsonAnyGetter
-    public static Map<String, Object> getProperties(){
+    public Map<String, Object> getProperties(){
         return properties;
     }
 }
