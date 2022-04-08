@@ -1,6 +1,7 @@
 package configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import jdk.nashorn.internal.runtime.regexp.joni.Config;
 
 import java.io.File;
