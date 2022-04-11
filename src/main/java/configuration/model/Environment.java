@@ -1,29 +1,17 @@
 package configuration.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Data;
 
+@Data
 public class Environment {
+    private String message;
+    private User user;
 
-    private static EnvironmentModel abc;
-    private static EnvironmentModel test;
-
-    public static EnvironmentModel getAbc() {
-        return abc;
+    public Environment() {
     }
 
-    public static EnvironmentModel getTest() {
-        return test;
+    public Environment(String message, User user) {
+        this.message = message;
+        this.user = user;
     }
-
-    public static List<EnvironmentModel> getListOfEnvironments(){
-        List<EnvironmentModel> listOfEnvironments = new ArrayList<>();
-        listOfEnvironments.add(getAbc());
-        listOfEnvironments.add(getTest());
-        return listOfEnvironments;
-    }
-
-
-
-
 }
