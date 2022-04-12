@@ -1,4 +1,4 @@
-activeEnvironment: prod
+activeEnvironment: test
 environments:
   test:
     browser:

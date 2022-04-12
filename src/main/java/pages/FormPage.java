@@ -16,7 +16,6 @@ public class FormPage {
 
     private static Logger log = LoggerFactory.getLogger("FormPage.class");
 
-
     @FindBy(id = "inputFirstName3")
     private WebElement firstName;
     @FindBy(id = "inputLastName3")

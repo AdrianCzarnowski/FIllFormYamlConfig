@@ -13,18 +13,24 @@ public class EnvironmentFactory {
         return EnvironmentFactory.EnvironmentPropertySingleton.INSTANCE;
     }
 
-        private static class EnvironmentPropertySingleton {
+    private static class EnvironmentPropertySingleton {
         private static final Environment INSTANCE = loadConfig();
     }
 
-    public static Environment loadConfig (){
+    public static Environment loadConfig() {
+
         YamlReader yamlReader = new YamlReader();
         Config config = yamlReader.getConfig();
-        String activeEnvironment = config.getActiveEnvironment();
-        log.info("<<<<<<<<<<<<<<<<<<<Active environment founded name: " + activeEnvironment.toUpperCase());
-        return config.getEnvironments().get(activeEnvironment);
-    }
 
+        try {
+            String activeEnvironment = config.getActiveEnvironment();
+            log.info("<<<<<<<<<<<<<<<<<<<Active environment founded name: " + activeEnvironment.toUpperCase());
+            return config.getEnvironments().get(activeEnvironment);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
 

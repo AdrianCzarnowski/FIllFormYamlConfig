@@ -4,6 +4,7 @@ import configuration.models.Environment;
 import configuration.models.User;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +13,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.nio.channels.NoConnectionPendingException;
 
 public class BrowserConfig {
 
@@ -22,12 +25,16 @@ public class BrowserConfig {
     private WebDriver driver;
 
     public BrowserConfig(Environment environmentModel) {
-        browserName = environmentModel.getBrowser().getBrowserName();
-        log.info("<<<<<<<<<<<<<<<<<<<<Browser initialized: " + this.browserName.toUpperCase());
-        appUrl = environmentModel.getBrowser().getAppUrl();
-        log.info("<<<<<<<<<<<<<<<<<<<<Website address retrieved: " + appUrl);
-    }
 
+        try {
+            browserName = environmentModel.getBrowser().getBrowserName();
+            log.info("<<<<<<<<<<<<<<<<<<<<Browser initialized: " + this.browserName.toUpperCase());
+            appUrl = environmentModel.getBrowser().getAppUrl();
+            log.info("<<<<<<<<<<<<<<<<<<<<Website address retrieved: " + appUrl);
+        } catch (WebDriverException exception) {
+            return;
+        }
+    }
 
     public WebDriver getDriver() {
         WebDriver driver;
