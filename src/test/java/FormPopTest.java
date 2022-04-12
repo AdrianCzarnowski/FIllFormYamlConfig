@@ -1,3 +1,4 @@
+import configuration.models.User;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,10 +15,11 @@ public class FormPopTest extends TestBase {
     public void shouldFIllFormWithSuccess() {
         driver.get(URL);
         FormPage formPage = new FormPage(driver);
-        formPage.setFirstName("Jan")
-                .setLastName("Nowak")
-                .setEmail("jannowak@wp.pl")
-                .setAge(20)
+        User user =
+        formPage.setFirstName(user.getFirstName())
+                .setLastName(user.getLastName())
+                .setEmail(user.getEmail())
+                .setAge(user.getAge())
                 .selectRandomGender()
                 .selectRandomExperience()
                 .selectRandomProfession()

@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 
-public class Browser {
+public class BrowserConfig {
 
     private String browserName = "chrome";
     private WebDriver driver;

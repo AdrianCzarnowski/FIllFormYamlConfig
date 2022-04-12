@@ -1,4 +1,3 @@
-
 enviroment:
   int:
     envName : abc
@@ -7,7 +6,6 @@ enviroment:
     lastName: Pitt
     email: bradpitt@gmail.com
     age: 50
-    message: Form send with success
   test:
     envName: test
     appUrl: https://seleniumui.moderntester.pl/form.php
@@ -15,4 +13,3 @@ enviroment:
     lastName: Hayek
     email: salmahayek@kahoot.com
     age: 45
-    message: Form send with success

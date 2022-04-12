@@ -1,8 +1,12 @@
-package configuration.model;
+package configuration.models;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class User {
     private String firstName;
     private String lastName;
@@ -10,6 +14,5 @@ public class User {
     private int age;
 
     public User (){
-
     }
 }
