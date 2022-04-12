@@ -13,7 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 
 public class BrowserConfig {
 
-    private String browserName = "chrome";
+    private String browserName;
     private String appUrl;
     private WebDriver driver;
 
@@ -38,13 +38,13 @@ public class BrowserConfig {
                 WebDriverManager.firefoxdriver().setup();
                 optionsFirefox.addArguments("start-maximized");
                 driver = new FirefoxDriver(optionsFirefox);
-                driver.get(System.getProperty("appUrl"));
+                driver.get(appUrl);
                 break;
             default:
                 InternetExplorerOptions optionsdefault = new InternetExplorerOptions();
                 WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver(optionsdefault);
-                driver.get(System.getProperty("appUrl"));
+                driver.get(appUrl);
         }
         this.driver=driver;
         return this.driver;

@@ -5,6 +5,16 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+
+    public String getValidation() {
+        return validation;
+    }
+
+    public void setValidation(String validation) {
+        this.validation = validation;
+    }
+
+    private String validation;
     private int age;
 
     public User (){

@@ -5,8 +5,6 @@ import configuration.models.Environment;
 
 public class EnvironmentFactory {
 
-
-
     public static Environment getInstance() {
         return EnvironmentFactory.EnvironmentPropertySingleton.INSTANCE;
     }

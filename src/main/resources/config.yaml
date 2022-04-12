@@ -1,4 +1,4 @@
-activeEnvironment: test
+activeEnvironment: prod
 environments:
   test:
     browser:
@@ -8,6 +8,7 @@ environments:
       firstName: Brad
       lastName: Pitt
       email: bradpitt@gmail.com
+      validation: Form send with success
       age: 50
   prod:
     browser:
@@ -17,5 +18,6 @@ environments:
       firstName: Adam
       lastName: Małysz
       email: adamskacze@gmail.com
+      validation: Form send with success
       age: 35
 
