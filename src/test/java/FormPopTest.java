@@ -27,7 +27,7 @@ public class FormPopTest extends TestBase {
                 .selectCommands()
                 .setFile()
                 .setSingInButton();
-        assertThat("Wrong validator message", formPage.getValidationMsg(), equalTo(user.getValidation()));
+        assertThat(formPage.getValidationMsg(), equalTo(user.getValidation()));
         log.info(VALIDATION_PASS);
     }
 }
