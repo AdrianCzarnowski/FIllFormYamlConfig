@@ -10,8 +10,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BrowserConfig {
+
+    private static Logger log = LoggerFactory.getLogger("BrowserConfig.class");
 
     private String browserName;
     private String appUrl;
@@ -19,7 +23,9 @@ public class BrowserConfig {
 
     public BrowserConfig(Environment environmentModel) {
         browserName = environmentModel.getBrowser().getBrowserName();
+        log.info("<<<<<<<<<<<<<<<<<<<<Browser initialized: " + this.browserName.toUpperCase());
         appUrl = environmentModel.getBrowser().getAppUrl();
+        log.info("<<<<<<<<<<<<<<<<<<<<Website address retrieved: " + appUrl);
     }
 
 

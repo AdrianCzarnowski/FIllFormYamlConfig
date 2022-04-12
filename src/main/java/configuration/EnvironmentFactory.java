@@ -21,7 +21,7 @@ public class EnvironmentFactory {
         YamlReader yamlReader = new YamlReader();
         Config config = yamlReader.getConfig();
         String activeEnvironment = config.getActiveEnvironment();
-        log.info("<<<<<<<<<<<<<<<<Active environment founded " + activeEnvironment);
+        log.info("<<<<<<<<<<<<<<<<<<<Active environment founded name: " + activeEnvironment.toUpperCase());
         return config.getEnvironments().get(activeEnvironment);
     }
 

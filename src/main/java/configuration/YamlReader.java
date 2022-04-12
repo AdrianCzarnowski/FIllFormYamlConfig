@@ -29,7 +29,7 @@ public class YamlReader {
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             this.config = mapper.readValue(new File("src/main/resources/config.yaml"), Config.class);
-            log.info("<<<<<<<<<<<<<<Config yaml file  has been read");
+            log.info("<<<<<<<<<<<<<<<<<<<Config yaml file  has been read");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
 
