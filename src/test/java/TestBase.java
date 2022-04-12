@@ -37,7 +37,7 @@ public class TestBase {
     void tearDown() {
         driver.manage().deleteAllCookies();
         driver.quit();
-        log.debug("<<<<<<<<<<<<<<Driver CLOSE<<<<<<<<<<<<<<<<");
+        log.info("<<<<<<<<<<<<<<Driver CLOSE<<<<<<<<<<<<<<<<");
     }
 
 }
