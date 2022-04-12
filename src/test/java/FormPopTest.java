@@ -15,7 +15,7 @@ public class FormPopTest extends TestBase {
     public void shouldFIllFormWithSuccess() {
         driver.get(URL);
         FormPage formPage = new FormPage(driver);
-        User user =
+        User user = new User();
         formPage.setFirstName(user.getFirstName())
                 .setLastName(user.getLastName())
                 .setEmail(user.getEmail())
