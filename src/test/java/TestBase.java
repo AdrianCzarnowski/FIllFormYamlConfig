@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 public class TestBase {
 
     private static Logger log = LoggerFactory.getLogger("TestBase.class");
+    public static final String VALIDATION_PASS = "♛♛♛♛♛♛♛♛♛♛♛♛♛VALIDATION PASS♛♛♛♛♛♛♛♛♛♛♛♛♛";
     protected static WebDriver driver;
     private static BrowserConfig browserConfig;
 
