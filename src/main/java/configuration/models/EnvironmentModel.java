@@ -14,5 +14,12 @@ public class EnvironmentModel {
         yamlReader = new YamlReader();
 
     }
+    public static EnvironmentModel getInstance() {
+        return EnvironmentModel.EnvironmentPropertySingleton.INSTANCE;
+    }
+
+        private static class EnvironmentPropertySingleton {
+        private static final EnvironmentModel INSTANCE = new EnvironmentModel();
+    }
 
 }

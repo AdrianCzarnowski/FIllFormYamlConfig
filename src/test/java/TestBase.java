@@ -1,6 +1,7 @@
 
 import configuration.BrowserConfig;
 import configuration.models.Environment;
+import configuration.models.EnvironmentModel;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,17 +16,15 @@ public class TestBase {
     private static Logger log = LoggerFactory.getLogger("TestBase.class");
     protected static WebDriver driver;
     private static BrowserConfig browserConfig;
-    private static Environment environment;
+    private static EnvironmentModel environmentModel;
 
 
     @BeforeAll
     static void beforeAll() {
-        environment = Environment.getInstance();
+        environmentModel = EnvironmentModel.getInstance();
         browserConfig = new BrowserConfig();
         driver = browserConfig.getDriver();
     }
-
-
 
     @AfterEach
     void tearDown() {

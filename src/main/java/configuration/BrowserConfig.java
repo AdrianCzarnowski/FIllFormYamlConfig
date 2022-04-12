@@ -22,7 +22,7 @@ public class BrowserConfig {
                 WebDriverManager.chromedriver().setup();
                 optionsChrome.addArguments("start-maximized");
                 driver = new ChromeDriver(optionsChrome);
-                driver.get(System.getProperty("appUrl"));
+                driver.get("https://seleniumui.moderntester.pl/form.php");
                 break;
             case "firefox":
                 FirefoxOptions optionsFirefox = new FirefoxOptions();
