@@ -1,15 +1,21 @@
-enviroment:
-  int:
-    envName : abc
-    appUrl: https://seleniumui.moderntester.pl/form.php
-    firstName: Brad
-    lastName: Pitt
-    email: bradpitt@gmail.com
-    age: 50
+activeEnvironment: test
+environments:
   test:
-    envName: test
-    appUrl: https://seleniumui.moderntester.pl/form.php
-    firstName: Salma
-    lastName: Hayek
-    email: salmahayek@kahoot.com
-    age: 45
+    browser:
+      browserName: chrome
+      appUrl: https://seleniumui.moderntester.pl/form.php
+    user:
+      firstName: Brad
+      lastName: Pitt
+      email: bradpitt@gmail.com
+      age: 50
+  prod:
+    browser:
+      browserName: chrome
+      appUrl: https://seleniumui.moderntester.pl/form.php
+    user:
+      firstName: Adam
+      lastName: Małysz
+      email: adamskacze@gmail.com
+      age: 35
+

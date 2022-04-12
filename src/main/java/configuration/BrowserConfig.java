@@ -1,5 +1,7 @@
 package configuration;
 
+import configuration.models.Environment;
+import configuration.models.User;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +14,14 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 public class BrowserConfig {
 
     private String browserName = "chrome";
+    private String appUrl;
     private WebDriver driver;
+
+    public BrowserConfig(Environment environmentModel) {
+        browserName = environmentModel.getBrowser().getBrowserName();
+        appUrl = environmentModel.getBrowser().getAppUrl();
+    }
+
 
     public WebDriver getDriver() {
         WebDriver driver;
@@ -22,7 +31,7 @@ public class BrowserConfig {
                 WebDriverManager.chromedriver().setup();
                 optionsChrome.addArguments("start-maximized");
                 driver = new ChromeDriver(optionsChrome);
-                driver.get("https://seleniumui.moderntester.pl/form.php");
+                driver.get(appUrl);
                 break;
             case "firefox":
                 FirefoxOptions optionsFirefox = new FirefoxOptions();

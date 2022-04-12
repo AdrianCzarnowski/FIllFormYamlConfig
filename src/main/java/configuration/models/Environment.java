@@ -1,17 +1,14 @@
 package configuration.models;
 
 
-
 public class Environment {
     private String envName;
+    private Browser browser;
     private User user;
 
-    public Environment(String envName, User user) {
-        this.envName = envName;
-        this.user = user;
-    }
 
-    public Environment() {
+    public Browser getBrowser() {
+        return browser;
     }
 
     public String getEnvName() {
