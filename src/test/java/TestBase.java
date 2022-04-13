@@ -1,7 +1,7 @@
 
 import configuration.BrowserConfig;
-import configuration.models.Environment;
 import configuration.EnvironmentFactory;
+import configuration.models.Environment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +14,7 @@ public class TestBase {
     public static final String VALIDATION_PASS = "♛♛♛♛♛♛♛♛♛♛♛♛♛VALIDATION PASS♛♛♛♛♛♛♛♛♛♛♛♛♛";
     protected static WebDriver driver;
     private static BrowserConfig browserConfig;
+    private static Environment environmentModel;
 
     public static Environment getEnvironmentModel() {
         return environmentModel;
@@ -22,9 +23,6 @@ public class TestBase {
     public static void setEnvironmentModel(Environment environmentModel) {
         TestBase.environmentModel = environmentModel;
     }
-
-    private static Environment environmentModel;
-
 
     @BeforeAll
     static void beforeAll() {
@@ -39,7 +37,6 @@ public class TestBase {
         driver.quit();
         log.info("<<<<<<<<<<<<<<Driver CLOSE<<<<<<<<<<<<<<<<");
     }
-
 }
 
 
