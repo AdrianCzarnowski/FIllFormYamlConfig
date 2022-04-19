@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 public class EnvironmentFactory {
 
     private static Logger log = LoggerFactory.getLogger("EnvironmentFactory.class");
+    Environment environmentConfig;
 
     public static Environment getInstance() {
         return EnvironmentFactory.EnvironmentPropertySingleton.INSTANCE;
@@ -31,6 +32,7 @@ public class EnvironmentFactory {
         }
         return null;
     }
+    public Environment getConfig(){
+        return environmentConfig;
+    }
 }
-
-

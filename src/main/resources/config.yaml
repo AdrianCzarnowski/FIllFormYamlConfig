@@ -10,6 +10,7 @@ environments:
       email: bradpitt@gmail.com
       validation: Form send with success
       age: 50
+
   prod:
     browser:
       browserName: chrome

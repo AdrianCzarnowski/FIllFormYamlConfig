@@ -1,30 +1,19 @@
 package configuration.models;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import configuration.EnvironmentFactory;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class Environment {
-    private String envName;
+import java.util.HashMap;
+@Data
+@NoArgsConstructor
+public class Environment extends EnvironmentFactory {
+
     private Browser browser;
-    private User user;
-
-
-    public Browser getBrowser() {
-        return browser;
-    }
-
-    public String getEnvName() {
-        return envName;
-    }
-
-    public void setEnvName(String envName) {
-        this.envName = envName;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
+    @JsonAnyGetter
+    private HashMap<String, Object> user;
 }
+
+
+

@@ -14,21 +14,17 @@ public class TestBase {
     public static final String VALIDATION_PASS = "♛♛♛♛♛♛♛♛♛♛♛♛♛VALIDATION PASS♛♛♛♛♛♛♛♛♛♛♛♛♛";
     protected static WebDriver driver;
     private static BrowserConfig browserConfig;
-    private static Environment environmentModel;
+    public static Environment environmentFactory;
 
-    public static Environment getEnvironmentModel() {
-        return environmentModel;
-    }
-
-    public static void setEnvironmentModel(Environment environmentModel) {
-        TestBase.environmentModel = environmentModel;
-    }
 
     @BeforeAll
     static void beforeAll() {
-        environmentModel = EnvironmentFactory.getInstance();
-        browserConfig = new BrowserConfig(environmentModel);
+        environmentFactory = EnvironmentFactory.getInstance();
+        browserConfig = (BrowserConfig) environmentFactory.getBrowser();
         driver = browserConfig.getDriver();
+    }
+    public static EnvironmentFactory getEnvironment() {
+        return environmentFactory;
     }
 
     @AfterEach
