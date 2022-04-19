@@ -1,15 +1,17 @@
-activeEnvironment: prod
+activeEnvironment: test
 environments:
   test:
     browser:
       browserName: chrome
       appUrl: https://seleniumui.moderntester.pl/form.php
     user:
-      firstName: Brad
-      lastName: Pitt
-      email: bradpitt@gmail.com
+      firstName: Kamil
+      lastName: Stoch
+      email: KamilSkacze@gmail.com
       validation: Form send with success
-      age: 50
+      age: 22
+      asdasdas: dasdas
+      asdasasd: asddas
 
   prod:
     browser:

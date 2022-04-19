@@ -14,20 +14,21 @@ public class FormPopTest extends TestBase {
 
     @Test
     public void shouldFIllFormWithSuccess() {
-        HashMap<String, Object> user = environmentFactory.getUser();
+        HashMap<String, Object> user = environment.getUser();
+        log.info("<<<<<<<<<<<<<<System get form data");
 
         FormPage formPage = new FormPage(driver);
-        formPage.setFirstName((String) user.get("firstName"))
-                .setLastName((String) user.get("lastName"))
-                .setEmail((String) user.get("email"))
-                .setAge((Integer) user.get("age"))
+        formPage.setFirstName(user.get("firstName"))
+                .setLastName(user.get("lastName"))
+                .setEmail(user.get("email"))
+                .setAge(user.get("age"))
                 .selectRandomGender()
                 .selectRandomExperience()
                 .selectRandomProfession()
                 .selectContinents()
                 .selectCommands()
-                .setFile()
-                .setSingInButton();
+                .inputFile()
+                .clickSingInButton();
         assertThat(formPage.getValidationMsg(), equalTo((String) user.get("validation")));
         log.info(VALIDATION_PASS);
     }

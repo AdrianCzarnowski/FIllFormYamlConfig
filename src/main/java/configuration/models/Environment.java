@@ -1,7 +1,7 @@
 package configuration.models;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import configuration.EnvironmentFactory;
+import configuration.factory.EnvironmentFactory;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

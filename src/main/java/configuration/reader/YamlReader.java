@@ -1,4 +1,4 @@
-package configuration;
+package configuration.reader;
 
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;

@@ -51,22 +51,22 @@ public class FormPage {
         PageFactory.initElements(driver, this);
     }
 
-    public FormPage setFirstName(String name) {
-        this.firstName.sendKeys(name);
+    public FormPage setFirstName(Object name) {
+        this.firstName.sendKeys((CharSequence) name);
         return this;
     }
 
-    public FormPage setLastName(String lastName) {
-        this.lastName.sendKeys(lastName);
+    public FormPage setLastName(Object lastName) {
+        this.lastName.sendKeys((CharSequence) lastName);
         return this;
     }
 
-    public FormPage setEmail(String email) {
-        this.email.sendKeys(email);
+    public FormPage setEmail(Object email) {
+        this.email.sendKeys((CharSequence) email);
         return this;
     }
 
-    public FormPage setAge(int age) {
+    public FormPage setAge(Object age) {
         fillAge.clear();
         fillAge.sendKeys(String.valueOf(age));
         return this;
@@ -101,13 +101,13 @@ public class FormPage {
         return this;
     }
 
-    public FormPage setFile() {
+    public FormPage inputFile() {
         File file = new File("src/main/resources/file.txt");
         this.fileInput.sendKeys(file.getAbsolutePath());
         return this;
     }
 
-    public FormPage setSingInButton() {
+    public FormPage clickSingInButton() {
         this.singInButton.click();
         return this;
     }
@@ -133,7 +133,5 @@ public class FormPage {
     public String getValidationMsg() {
         return validationMsg.getText();
     }
-
-
 }
 

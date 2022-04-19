@@ -1,5 +1,6 @@
-package configuration;
+package configuration.factory;
 
+import configuration.reader.YamlReader;
 import configuration.models.Config;
 import configuration.models.Environment;
 import org.slf4j.Logger;

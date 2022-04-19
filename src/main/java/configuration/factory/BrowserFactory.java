@@ -1,7 +1,6 @@
-package configuration;
+package configuration.factory;
 
 import configuration.models.Browser;
-import configuration.models.Environment;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -15,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class BrowserConfig extends Browser {
+public class BrowserFactory extends Browser {
 
     private static Logger log = LoggerFactory.getLogger("BrowserConfig.class");
 
@@ -23,7 +22,7 @@ public class BrowserConfig extends Browser {
     private String appUrl;
     private WebDriver driver;
 
-    public BrowserConfig(Browser browser) {
+    public BrowserFactory(Browser browser) {
 
         try {
             browserName = browser.getBrowserName();
