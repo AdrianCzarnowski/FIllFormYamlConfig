@@ -20,7 +20,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         environmentFactory = EnvironmentFactory.getInstance();
-        browserConfig = (BrowserConfig) environmentFactory.getBrowser();
+        browserConfig = new BrowserConfig(environmentFactory.getBrowser());
         driver = browserConfig.getDriver();
     }
     public static EnvironmentFactory getEnvironment() {
