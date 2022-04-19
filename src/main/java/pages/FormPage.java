@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.util.List;
 import java.util.Random;
-
 public class FormPage {
 
     private static Logger log = LoggerFactory.getLogger("FormPage.class");

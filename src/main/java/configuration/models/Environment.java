@@ -9,7 +9,6 @@ import java.util.HashMap;
 @Data
 @NoArgsConstructor
 public class Environment extends EnvironmentFactory {
-
     private Browser browser;
     @JsonAnyGetter
     private HashMap<String, Object> user;

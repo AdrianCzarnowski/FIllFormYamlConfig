@@ -10,7 +10,6 @@ public class EnvironmentFactory {
 
     private static Logger log = LoggerFactory.getLogger("EnvironmentFactory.class");
 
-
     public static Environment getInstance() {
         return EnvironmentFactory.EnvironmentPropertySingleton.INSTANCE;
     }

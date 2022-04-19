@@ -12,15 +12,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
-
 public class YamlReader {
 
     private static Logger log = LoggerFactory.getLogger("YamlReader.class");
-
-    public Config getConfig() {
-        return config;
-    }
 
     Config config;
 
@@ -40,6 +34,9 @@ public class YamlReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public Config getConfig() {
+        return config;
     }
 }
 
