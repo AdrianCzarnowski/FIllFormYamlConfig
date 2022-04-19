@@ -14,7 +14,7 @@ public class FormPopTest extends TestBase {
 
     @Test
     public void shouldFIllFormWithSuccess() {
-        HashMap<String, Object> user = getEnvironment().getConfig().getUser();
+        HashMap<String, Object> user = environmentFactory.getUser();
 
         FormPage formPage = new FormPage(driver);
         formPage.setFirstName((String) user.get("firstName"))
