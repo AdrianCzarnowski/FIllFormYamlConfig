@@ -4,7 +4,7 @@ environments:
     browser:
       browserName: chrome
       appUrl: https://seleniumui.moderntester.pl/form.php
-    user:
+    testData:
       firstName: Kamil
       lastName: Stoch
       email: KamilSkacze@gmail.com
@@ -12,6 +12,8 @@ environments:
       age: 22
       asdasdas: dasdas
       asdasasd: asddas
+
+
 
   prod:
     browser:
@@ -24,4 +26,5 @@ environments:
       validation: Form send with success
       age: 35
       asdas: asdsdas
+
 

@@ -7,12 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+
 public class TestBase {
     private static Logger log = LoggerFactory.getLogger("TestBase.class");
     public static final String VALIDATION_PASS = "♛♛♛♛♛♛♛♛♛♛♛♛♛VALIDATION PASS♛♛♛♛♛♛♛♛♛♛♛♛♛";
     protected static WebDriver driver;
     private static BrowserFactory browserFactory;
     public static Environment environment;
+    protected HashMap<String, Object> testData = environment.getUser();
 
     @BeforeAll
     static void beforeAll() {

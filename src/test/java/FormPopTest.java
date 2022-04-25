@@ -3,8 +3,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.FormPage;
 
-import java.util.HashMap;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -14,14 +12,14 @@ public class FormPopTest extends TestBase {
 
     @Test
     public void shouldFIllFormWithSuccess() {
-        HashMap<String, Object> user = environment.getUser();
+
         log.info("<<<<<<<<<<<<<<System get form data");
 
         FormPage formPage = new FormPage(driver);
-        formPage.setFirstName(user.get("firstName"))
-                .setLastName(user.get("lastName"))
-                .setEmail(user.get("email"))
-                .setAge(user.get("age"))
+        formPage.setFirstName(testData.get("firstName"))
+                .setLastName(testData.get("lastName"))
+                .setEmail(testData.get("email"))
+                .setAge(testData.get("age"))
                 .selectRandomGender()
                 .selectRandomExperience()
                 .selectRandomProfession()
@@ -29,7 +27,7 @@ public class FormPopTest extends TestBase {
                 .selectCommands()
                 .inputFile()
                 .clickSingInButton();
-        assertThat(formPage.getValidationMsg(), equalTo((String) user.get("validation")));
+        assertThat(formPage.getValidationMsg(), equalTo(testData.get("validation")));
         log.info(VALIDATION_PASS);
     }
 }

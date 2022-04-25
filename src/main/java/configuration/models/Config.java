@@ -1,6 +1,7 @@
 package configuration.models;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import configuration.factory.BrowserFactory;
 
 import lombok.Data;
@@ -14,6 +15,13 @@ import java.util.HashMap;
 public class Config {
     private String activeEnvironment;
     private BrowserFactory browser;
+    private HashMap<String, Environment> environments = new HashMap<>();
+    @JsonAnySetter
+    void setProperties(String key, Environment value) {
+        environments.put(key, value);
+    }
     @JsonAnyGetter
-    private HashMap<String, Environment> environments;
+    public HashMap<String, Environment> getEnvironments(){
+        return environments;
+    }
 }

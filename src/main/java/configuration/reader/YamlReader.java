@@ -16,7 +16,7 @@ public class YamlReader {
 
     private static Logger log = LoggerFactory.getLogger("YamlReader.class");
 
-    Config config;
+    private Config config;
 
     public YamlReader() {
 
